@@ -5,7 +5,6 @@
   "description": "A software motion detector",
   "startup": "system",
   "boot": "auto",
-  "host_network": true,
   "map": [
     "share:rw"
   ],
@@ -13,6 +12,7 @@
   "options": {
 	"config": "",
   	"videodevice": "/dev/video0",
+  	"input": 0,
   	"width": 640,
   	"height": 480,
   	"framerate": 2,
@@ -27,6 +27,7 @@
   "schema": {
 	"config": "str",
   	"videodevice": "str",
+  	"input": "int",
   	"width": "int",
   	"height": "int",
   	"framerate": "int",

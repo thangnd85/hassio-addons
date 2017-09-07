@@ -5,6 +5,7 @@ CONFIG_PATH=/data/options.json
 
 CONFIG=$(jq --raw-output ".config" $CONFIG_PATH)
 VIDEODEVICE=$(jq --raw-output ".videodevice" $CONFIG_PATH)
+INPUT=$(jq --raw-output ".input" $CONFIG_PATH)
 WIDTH=$(jq --raw-output ".width" $CONFIG_PATH)
 HEIGHT=$(jq --raw-output ".height" $CONFIG_PATH)
 FRAMERATE=$(jq --raw-output ".framerate" $CONFIG_PATH)
@@ -23,6 +24,7 @@ ls -al /dev/video*
 
 if [ ! -f "$CONFIG" ]; then
 	sed -i "s|%%VIDEODEVICE%%|$VIDEODEVICE|g" /etc/motion.conf
+	sed -i "s|%%INPUT%%|$INPUT|g" /etc/motion.conf
 	sed -i "s|%%WIDTH%%|$WIDTH|g" /etc/motion.conf
 	sed -i "s|%%HEIGHT%%|$HEIGHT|g" /etc/motion.conf
 	sed -i "s|%%FRAMERATE%%|$FRAMERATE|g" /etc/motion.conf
