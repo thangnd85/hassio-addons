@@ -1,22 +1,11 @@
 # Hass.io Addons repository
 
-## Motion Addon - WORK IN PROGRESS
+## Motion Addon
 Addon to use a usb camera with motion detection, based on https://motion-project.github.io/
 
 ### Current status
-Webcam is recognized, but only outputs an gray image.
+Currently only working for the first webcam found at /dev/video0
 
-```
-[1] cap.driver: “ov534”
-[1] cap.card: “USB Camera-B4.09.24.1”
-[1] cap.bus_info: “usb-3f980000.usb-1.2”
-[1] cap.capabilities=0x85200001
-[1] - VIDEO_CAPTURE
-[1] - READWRITE
-[1] - STREAMING
-[1] Unable to query input -1 VIDIOC_ENUMINPUT: Invalid argument
-[1] ioctl (VIDIOCGCAP): Not a tty
-```
 
 ### Settings
 ##### config
@@ -68,7 +57,7 @@ Target base directory for pictures and films
 Use absolute path.
 
 ##### snapshot_interval
-*60*
+*30*
 
 Make automated snapshot every N seconds (0 = disabled)
 
@@ -93,6 +82,16 @@ Note: A symbolic link called lastsnap.jpg created in the target_dir will always 
 You can put quotation marks around the text to allow leading spaces
 ```
 
+##### picture_output
+*on*
+
+Output 'normal' pictures when motion is detected  
+Valid values: on, off, first, best, center  
+When set to 'first', only the first picture of an event is saved.  
+Picture with most motion of an event is saved when set to 'best'.  
+Picture with motion nearest center of picture is saved when set to 'center'.  
+Can be used as preview shot for the corresponding movie.
+
 ##### picture_name
 *%v-%Y%m%d%H%M%S-%q*
 
@@ -112,13 +111,3 @@ Set to 'preview' together with best-preview feature enables special naming conve
 %C = value defined by text_event - do not use with text_event!
 You can put quotation marks around the text to allow leading spaces
 ```
-
-##### stream_port
-*0*
-
-The mini-http server listens to this port for requests (0 = disabled)
-
-##### stream_local_only
-*on*
-
-Restrict stream connections to localhost only
