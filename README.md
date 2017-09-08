@@ -6,6 +6,13 @@ Addon to use a usb camera with motion detection, based on https://motion-project
 ### Current status
 Currently only working for the first webcam found at /dev/video0
 
+### Home Assistant integration
+```
+camera:
+  - platform: local_file
+    name: Living Room Cam
+    file_path: /share/motion/lastsnap.jpg
+```
 
 ### Settings
 ##### config
