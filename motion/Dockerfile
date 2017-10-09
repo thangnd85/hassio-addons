@@ -1,13 +1,11 @@
 
-FROM %%BASE_IMAGE%%
+FROM debian:jessie
 
-# Add env
-ENV LANG C.UTF-8
+MAINTAINER kfei <kfei@kfei.net>
 
-# Setup base
-RUN apk upgrade --no-cache --available \
- && apk add --no-cache --repository http://nl.alpinelinux.org/alpine/edge/testing \
-        jq motion
+RUN apt-get update && apt-get install -q -y --no-install-recommends \
+    motion \
+    jq
 
 # Copy data
 COPY run.sh /

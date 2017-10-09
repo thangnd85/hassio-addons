@@ -18,7 +18,6 @@ PICTURENAME=$(jq --raw-output ".picture_name" $CONFIG_PATH)
 
 
 echo "[Info] Show connected usb devices"
-lsusb
 ls -al /dev/video*
 
 if [ ! -f "$CONFIG" ]; then
@@ -36,4 +35,4 @@ if [ ! -f "$CONFIG" ]; then
 	CONFIG=/etc/motion.conf
 fi
 # start server
-exec motion -c $CONFIG < /dev/null
+motion -c $CONFIG

@@ -6,6 +6,12 @@ Addon to use a usb camera with motion detection, based on https://motion-project
 ### Current status
 Currently only working for the first webcam found at /dev/video0
 
+### Changelog
+|Version|Changes|
+|-------|-------|
+|2.0    | Changed base image to debian:jessie. Size is now bigger, but finally stable!|
+|1.0    | Inital release. A bit unstable|
+
 ### Home Assistant integration
 ```
 camera:
