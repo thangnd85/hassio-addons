@@ -1,8 +1,6 @@
 
 FROM debian:jessie
 
-MAINTAINER kfei <kfei@kfei.net>
-
 RUN apt-get update && apt-get install -q -y --no-install-recommends \
     motion \
     jq
