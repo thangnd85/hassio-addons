@@ -9,6 +9,7 @@ Currently only working for the first webcam found at /dev/video0
 ### Changelog
 |Version|Changes|
 |-------|-------|
+|2.1    | Added webcontrol configuration |
 |2.0    | Changed base image to debian:jessie. Size is now bigger, but finally stable!|
 |1.0    | Inital release. A bit unstable|
 
@@ -77,7 +78,6 @@ Make automated snapshot every N seconds (0 = disabled)
 ##### snapshot_name
 *%v-%Y%m%d%H%M%S-snapshot*
 
-
 File path for snapshots (jpeg or ppm) relative to target_dir  
 Default value is equivalent to legacy oldlayout option  
 For Motion 3.0 compatible mode choose: %Y/%m/%d/%H/%M/%S-snapshot  
@@ -124,3 +124,13 @@ Set to 'preview' together with best-preview feature enables special naming conve
 %C = value defined by text_event - do not use with text_event!
 You can put quotation marks around the text to allow leading spaces
 ```
+
+##### webcontrol_local
+*on*
+
+Restrict control connections to localhost only
+
+##### webcontrol_html
+*on*
+
+Output for http server, select off to choose raw text plain

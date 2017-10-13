@@ -1,10 +1,13 @@
 {
   "name": "Motion",
-  "version": "2.0",
+  "version": "2.1",
   "slug": "motion",
   "description": "A software motion detector that integrates a usb webcam into hass.io",
   "startup": "system",
   "boot": "auto",
+  "ports": {
+    "8081/tcp": 8081
+   },
   "map": [
     "share:rw"
   ],
@@ -21,7 +24,9 @@
   	"snapshot_interval": 30,
   	"snapshot_name": "%v-%Y%m%d%H%M%S-snapshot",
   	"picture_output": "on",
-  	"picture_name": "%v-%Y%m%d%H%M%S-%q"
+  	"picture_name": "%v-%Y%m%d%H%M%S-%q",
+  	"webcontrol_local": "on",
+  	"webcontrol_html": "on"
   },
   "schema": {
 	"config": "str",
@@ -35,6 +40,8 @@
   	"snapshot_interval": "int",
   	"snapshot_name": "str",
   	"picture_output": "str",
-  	"picture_name": "str"
+  	"picture_name": "str",
+  	"webcontrol_local": "str",
+  	"webcontrol_html": "str"
   }
 }
