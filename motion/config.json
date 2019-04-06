@@ -1,7 +1,7 @@
 {
-  "name": "Motion",
-  "version": "2.1",
-  "slug": "motion",
+  "name": "Motion1",
+  "version": "2.1.1",
+  "slug": "motion1",
   "description": "A software motion detector that integrates a usb webcam into hass.io",
   "startup": "system",
   "boot": "auto",
