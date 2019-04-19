@@ -15,6 +15,8 @@ SNAPSHOTINTERVAL=$(jq --raw-output ".snapshot_interval" $CONFIG_PATH)
 SNAPSHOTNAME=$(jq --raw-output ".snapshot_name" $CONFIG_PATH) 
 PICTUREOUTPUT=$(jq --raw-output ".picture_output" $CONFIG_PATH)
 PICTURENAME=$(jq --raw-output ".picture_name" $CONFIG_PATH)
+MOVIEOUTPUT=$(jq --raw-output ".movie_output" $CONFIG_PATH)
+MOVIENAME=$(jq --raw-output ".picture_name" $CONFIG_PATH)
 WEBCONTROLLOCAL=$(jq --raw-output ".webcontrol_local" $CONFIG_PATH)
 WEBCONTROLHTML=$(jq --raw-output ".webcontrol_html" $CONFIG_PATH)
 
@@ -34,6 +36,8 @@ if [ ! -f "$CONFIG" ]; then
 	sed -i "s|%%SNAPSHOTNAME%%|$SNAPSHOTNAME|g" /etc/motion.conf
 	sed -i "s|%%PICTUREOUTPUT%%|$PICTUREOUTPUT|g" /etc/motion.conf
 	sed -i "s|%%PICTURENAME%%|$PICTURENAME|g" /etc/motion.conf
+	sed -i "s|%%MOVIEOUTPUT%%|$MOVIEOUTPUT|g" /etc/motion.conf
+	sed -i "s|%%MOVIENAME%%|$MOVIENAME|g" /etc/motion.conf
 	sed -i "s|%%WEBCONTROLLOCAL%%|$WEBCONTROLLOCAL|g" /etc/motion.conf
 	sed -i "s|%%WEBCONTROLHTML%%|$WEBCONTROLHTML|g" /etc/motion.conf
 	CONFIG=/etc/motion.conf
