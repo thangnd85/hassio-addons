@@ -1,11 +1,13 @@
+
 {
-  "name": "Motion1",
-  "version": "2.1.2",
-  "slug": "motion1",
+  "name": "Motion",
+  "version": "2.2.4a",
+  "slug": "motion",
   "description": "A software motion detector that integrates a usb webcam into hass.io",
   "startup": "system",
   "boot": "auto",
   "ports": {
+    "8080/tcp": 8888,
     "8081/tcp": 8081
    },
   "arch": [
@@ -25,13 +27,15 @@
   	"input": 0,
   	"width": 640,
   	"height": 480,
-  	"framerate": 2,
+  	"framerate": 100,
   	"text_right": "%Y-%m-%d %T-%q",
   	"target_dir": "/share/motion",
-  	"snapshot_interval": 30,
+  	"snapshot_interval": 0,
   	"snapshot_name": "%v-%Y%m%d%H%M%S-snapshot",
   	"picture_output": "on",
   	"picture_name": "%v-%Y%m%d%H%M%S-%q",
+  	"movie_output": "on",
+	"movie_name": "%v-%Y%m%d%H%M%S",
   	"webcontrol_local": "on",
   	"webcontrol_html": "on"
   },
@@ -48,6 +52,8 @@
   	"snapshot_name": "str",
   	"picture_output": "str",
   	"picture_name": "str",
+  	"movie_output": "str",
+	"movie_name": "str",
   	"webcontrol_local": "str",
   	"webcontrol_html": "str"
   }
