@@ -1,7 +1,7 @@
 ## Motion Addon
 Addon to use a usb camera with motion detection, based on https://motion-project.github.io/
-Folked from: https://github.com/HerrHofrat/hassio-addons
-New Repo Address: https://github.com/lovejoy777/hassio-addons
+Folked from: https://github.com/lovejoy777/hassio-addons
+New Repo Address:  https://github.com/thangnd85/hassio-addons
 
 ### Current status
 Currently only working for the first webcam found at /dev/video0
