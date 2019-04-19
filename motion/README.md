@@ -17,9 +17,9 @@ Currently only working for the first webcam found at /dev/video0
 ### Home Assistant integration
 ```
 camera:
-  - platform: local_file
+  - platform: mjpeg
     name: Living Room Cam
-    file_path: /share/motion/lastsnap.jpg
+    mjpeg_url: http://localhost:8081/
 ```
 
 ### Settings
